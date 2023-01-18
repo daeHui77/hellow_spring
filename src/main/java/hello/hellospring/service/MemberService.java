@@ -26,10 +26,10 @@ public class MemberService {
             throw new IllegalStateException("이미 존재하는  회원입니다.");
         });*/
         //Null일 가능성이 있으면 Optional로 한번 감싸서 코딩을 해준다.
-
         validateDuplicateMember(member);//중복 회원 검증
         memberRepository.save(member);
         return member.getId();
+
     }
 
     private void validateDuplicateMember(Member member) {
